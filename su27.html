@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Су-27 | 3D-Авиатека</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="model-page-body">
+    
+    <header>
+        <div class="logo">3D-Авиатека</div>
+        <nav>
+            <a href="index.html">← В меню</a>
+            <a href="yak38.html">Як-38</a>
+            <a href="mig23.html">МиГ-23</a>
+            <a href="su27.html" style="color:var(--accent)">Су-27</a>
+        </nav>
+    </header>
+
+    <img src="images/su27.png" class="aircraft-fixed-bg" alt="Су-27">
+
+    <div class="content-overlay">
+        
+        <section class="info-section">
+            <div class="glass-card">
+                <span class="spec-label">Истребитель IV поколения</span>
+                <h2>Су-27 «Фланкер»</h2>
+                <p>Один из основных самолетов ВВС России. Создавался как ответ американскому F-15 и стал эталоном маневренности благодаря своей интегральной аэродинамической схеме.</p>
+            </div>
+        </section>
+
+        <section class="info-section right">
+            <div class="glass-card">
+                <h2>Превосходство в скорости</h2>
+                <p>Благодаря двум мощным двигателям АЛ-31Ф, самолет способен развивать огромную скорость даже на большой высоте.</p>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <span class="spec-value">2500 км/ч</span>
+                        <span class="spec-label">Макс. скорость</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-value">18 500 м</span>
+                        <span class="spec-label">Потолок высоты</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="glass-card">
+                <h2>Огневая мощь</h2>
+                <p>10 точек подвески позволяют нести широкий спектр ракет «воздух-воздух» и «воздух-поверхность», а 30-мм пушка ГШ-30-1 считается одной из лучших в мире.</p>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <span class="spec-value">10</span>
+                        <span class="spec-label">Точек подвески</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-value">150 выстр/сек</span>
+                        <span class="spec-label">Скорострельность</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="info-section">
+    <div class="model-3d-container">
+        <model-viewer 
+            src="models/su-27.glb" 
+            ar 
+            camera-controls 
+            auto-rotate 
+            shadow-intensity="1" 
+            exposure="1"
+            interaction-prompt="auto">
+            
+            <div class="glass-card" style="position: absolute; bottom: 20px; left: 20px; padding: 20px; max-width: 250px;">
+                <p style="font-size: 0.9rem; margin: 0;">Используйте мышь для вращения модели</p>
+            </div>
+        </model-viewer>
+    </div>
+</section>
+
+        <section id="interactive-map" class="map-section">
+            <h2 style="font-size: 3rem; margin-bottom: 30px; color: #2c3e50;">Интерактивный разбор конструкции</h2>
+            
+            <div class="map-wrapper">
+    <img src="images/su27.png" class="interactive-img" alt="Су-27">
+    
+    <a href="#ols" class="hotspot" style="top: 60%; left: 21%;">
+        <div class="hotspot-dot"></div>
+	<span class="hotspot-label">Система ОЛС-27</span>
+    </a>
+
+    <a href="#fuselage" class="hotspot" style="top: 49%; left: 54%;">
+        <div class="hotspot-dot"></div>
+	<span class="hotspot-label">Фюзеляж</span>
+    </a>
+
+    <a href="#engine" class="hotspot" style="top: 33%; left: 63%;">
+        <div class="hotspot-dot"></div>
+	<span class="hotspot-label">Двигатель</span>
+    </a>
+</div>
+        </section>
+
+        <div id="ols" class="part-feature-container">
+            <div class="part-content-wrapper">
+                <div class="part-image">
+                    <img src="images/Su-27-OLS.jpg" alt="ОЛС">
+                </div>
+                <div class="part-text">
+    		    <h2>ОЛС-27:<br>Глаза хищника</h2>
+    		    <p>Оптико-локационная система ОЛС-27 — это «тайное оружие» Су-27, позволяющее ему оставаться смертоносным при выключенном радаре. В отличие от радиолокатора, который выдает местоположение самолета своим излучением, ОЛС работает в пассивном режиме, улавливая тепловой след двигателей противника. Система настолько чувствительна, что способна обнаружить цель на расстоянии до 50 километров, оставаясь при этом абсолютно невидимой для датчиков облучения врага. В паре с нашлемной системой целеуказания «Щель», ОЛС позволяет пилоту захватывать цель простым поворотом головы. Это превращает воздушный бой в охоту из засады, где противник узнает о нападении только в момент пуска ракеты. Инженеры создали этот узел в виде стеклянного «шара» перед кабиной, обеспечив идеальный обзор в передней полусфере. ОЛС-27 незаменима в условиях радиоэлектронной борьбы, когда обычные радары слепнут от помех. Именно эта система дает Су-27 право называться мастером скрытного ближнего боя. Настоящий хищник не полагается на крик — он полагается на безупречное зрение.</p>
+    <a href="#interactive-map" class="back-to-map-btn">↑ К схеме самолета</a>
+</div>
+            </div>
+        </div>
+
+        <div id="fuselage" class="part-feature-container">
+            <div class="part-content-wrapper">
+                <div class="part-image">
+                    <img src="images/Su-27-Fisul.jpg" alt="Фюзеляж">
+                </div>
+                <div class="part-text">
+    <h2>Тело как крыло:<br>Интегральная схема</h2>
+    <p>Су-27 спроектирован по уникальной интегральной аэродинамической схеме, где фюзеляж и крыло не разделены, а представляют собой единый несущий корпус. Такая архитектура создает колоссальную подъемную силу: на долю корпуса приходится до 40% общего веса самолета, удерживаемого воздухом. Благодаря отсутствию четкой границы между деталями, истребитель обладает невероятным внутренним объемом для топлива, что позволяет ему летать на огромные расстояния без подвесных баков. Плавные обводы корпуса минимизируют сопротивление воздуха, позволяя машине буквально скользить в потоке. Эта конструкция стала ключом к выполнению таких фигур высшего пилотажа, как «Кобра Пугачева», недоступных большинству западных аналогов. Статическая неустойчивость самолета, скомпенсированная мощными вычислителями, заставляет его мгновенно откликаться на малейшее движение ручки управления. Каждый сантиметр обшивки здесь работает на маневренность и скорость, превращая тяжелую боевую машину в гибкого акробата. Фюзеляж Су-27 — это не просто каркас для агрегатов, а совершенное воплощение законов физики в титане и алюминии. Это вершина советской авиационной школы, опередившая свое время на десятилетия.</p>
+    <a href="#interactive-map" class="back-to-map-btn">↑ К схеме самолета</a>
+</div>
+            </div>
+        </div>
+
+        <div id="engine" class="part-feature-container">
+            <div class="part-content-wrapper">
+                <div class="part-image">
+                    <img src="images/Su-27-Dvig.jpg" alt="Двигатель">
+                </div>
+                <div class="part-text">
+    <h2>АЛ-31Ф:<br>Сердце легенды</h2>
+    <p>Двигатель АЛ-31Ф — это двухконтурный турбореактивный шедевр, обеспечивающий Су-27 беспрецедентную тяговооруженность. Суммарная мощь двух таких установок превышает вес самого самолета, что позволяет истребителю ускоряться при вертикальном наборе высоты. Двигатель оснащен уникальной системой защиты, предотвращающей срыв потока и помпаж даже при самых экстремальных маневрах и глубоких углах атаки. Его модульная конструкция позволяет проводить ремонт и замену отдельных узлов прямо в полевых условиях, что критически важно для фронтовой авиации. Температура газов перед турбиной достигает запредельных значений, требуя использования сложнейших систем охлаждения и жаропрочных сплавов. АЛ-31Ф не только разгоняет самолет до скоростей свыше 2500 км/ч, но и обеспечивает энергией все бортовые системы и вооружение. При включении форсажа небо за хвостом самолета содрогается, превращая тонны керосина в яростную кинетическую энергию. Этот двигатель доказал свою надежность в тысячах часов эксплуатации, став базой для всех последующих модификаций семейства «Су». Когда пилот дает полный газ, он чувствует за спиной мощь сотен тысяч лошадиных сил, готовых мгновенно унести машину за пределы возможного.</p>
+    <a href="#interactive-map" class="back-to-map-btn">↑ К схеме самолета</a>
+</div>
+            </div>
+        </div>
+
+    </div> <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

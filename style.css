@@ -1,0 +1,375 @@
+/* ==========================================================================
+   1. ГЛОБАЛЬНЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ
+   ========================================================================== 
+*/
+:root {
+    --bg-gradient: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    --blue-zone: linear-gradient(160deg, #ebf5ff 0%, #a2d2ff 100%);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --text-main: #2c3e50;
+    --text-dark: #0b2545;
+    --accent: #5dade2;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. ШАПКА И НАВИГАЦИЯ
+   ========================================================================== 
+*/
+header {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.logo { font-size: 1.5rem; font-weight: 800; text-transform: uppercase; }
+nav a { color: var(--text-main); text-decoration: none; margin-left: 30px; font-weight: 600; font-size: 0.9rem; }
+
+/* ==========================================================================
+   3. ГЛАВНАЯ СТРАНИЦА (INDEX)
+   ========================================================================== 
+*/
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 { font-size: 4.5rem; font-weight: 900; margin-bottom: 20px; }
+.hero p { font-size: 1.7rem; line-height: 1.5; max-width: 800px; opacity: 0.9; margin-bottom: 50px; }
+
+.cards-container { display: flex; gap: 35px; justify-content: center; }
+
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 40px;
+    padding: 45px 35px;
+    width: 350px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: 0.4s ease;
+}
+
+.card:hover { transform: translateY(-15px); background: rgba(255, 255, 255, 0.9); }
+.card img { width: 100%; height: 160px; object-fit: contain; margin-bottom: 30px; }
+
+/* Кнопка с анимацией */
+.card .btn {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    border-radius: 100px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover .btn {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(93, 173, 226, 0.3);
+}
+
+/* ==========================================================================
+   4. СТРАНИЦА САМОЛЕТА (ВЕРХНЯЯ ЧАСТЬ)
+   ========================================================================== 
+*/
+.aircraft-fixed-bg {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.content-overlay { position: relative; z-index: 10; padding-top: 60vh; }
+
+.info-section {
+    min-height: 45vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    margin-bottom: 5vh;
+}
+
+.info-section.right { justify-content: flex-end; }
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    padding: 60px;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 50px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+.glass-card h2 { font-size: 3rem; margin-bottom: 20px; font-weight: 800; }
+.glass-card p { font-size: 1.3rem; line-height: 1.7; }
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.spec-value { display: block; font-size: 2.5rem; font-weight: 800; color: var(--accent); }
+.spec-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; }
+
+/* ==========================================================================
+   5. ИНТЕРАКТИВНАЯ КАРТА (НАЧАЛО БЕЛОЙ ЗОНЫ)
+   ========================================================================== 
+/* --- ИНТЕРАКТИВНАЯ КАРТА (БЕЛАЯ РАМКА) --- */
+.map-section {
+    position: relative;
+    z-index: 20;
+    background: var(--white);
+    padding: 100px 5%;
+    text-align: center;
+    box-shadow: 0 -30px 60px rgba(0,0,0,0.1);
+}
+
+.map-wrapper {
+    position: relative;        /* Обязательно для позиционирования точек внутри */
+    display: inline-block;
+    margin: 40px auto 0;
+    background: #ffffff;
+    padding: 40px;            /* Отступ от картинки до края рамки */
+    border-radius: 60px;      /* Скругление как у инфо-блоков */
+    box-shadow: 0 40px 100px rgba(0,0,0,0.1); 
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.interactive-img { 
+    width: 100%; 
+    max-width: 1000px; 
+    display: block; 
+    border-radius: 30px; 
+}
+
+/* --- ТОЧКИ И ВСПЛЫВАЮЩИЕ ПОДСКАЗКИ --- */
+.hotspot {
+    position: absolute;        /* Координаты на карте */
+    z-index: 130;
+    cursor: pointer;
+    text-decoration: none;
+    /* Создаем область для наведения */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hotspot-dot {
+    width: 22px;
+    height: 22px;
+    background: var(--accent);
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hotspot:hover .hotspot-dot {
+    transform: scale(1.4);
+    background: var(--text-main);
+}
+
+/* Сами текстовые подсказки */
+.hotspot-label {
+    position: absolute;
+    bottom: 40px;              /* Всплывает над точкой */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    
+    background: #2c3e50;       /* Темный фон */
+    color: #ffffff !important; /* Белый текст */
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;       /* В одну строку */
+    
+    opacity: 0;                /* Скрыто */
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    pointer-events: none;      /* Чтобы не мешала кликать по точке */
+}
+
+/* Треугольник под текстом */
+.hotspot-label::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #2c3e50 transparent transparent transparent;
+}
+
+/* Появление текста при наведении на точку */
+.hotspot:hover .hotspot-label {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* --- ДЕТАЛЬНЫЕ БЛОКИ (ЧАСТИ САМОЛЕТА) --- */
+.part-feature-container {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    padding: 80px 5%;
+    background: linear-gradient(160deg, #ebf5ff 0%, #a2d2ff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.part-content-wrapper {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    background: #ffffff !important;
+    padding: 80px;
+    border-radius: 60px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+}
+
+/* Чередование блоков (текст слева / текст справа) */
+.part-feature-container:nth-child(even) .part-content-wrapper { 
+    flex-direction: row-reverse; 
+}
+/* ==========================================================================
+   6. ДЕТАЛЬНЫЕ БЛОКИ (ЧАСТИ САМОЛЕТА)
+   ========================================================================== 
+*/
+.part-feature-container {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    padding: 80px 5%;
+    background: var(--blue-zone);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.part-content-wrapper {
+    max-width: 1800px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    background: var(--white);
+    padding: 80px;
+    border-radius: 60px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+}
+
+.part-feature-container:nth-child(even) .part-content-wrapper { flex-direction: row-reverse; }
+
+.part-image { flex: 1.4; display: flex; justify-content: center; }
+
+.part-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+
+.part-content-wrapper:hover .part-image img { transform: scale(1.03); }
+
+.part-text { 
+    flex: 1; 
+    /* Защита от "многоточий" и сокращений */
+    min-width: 350px; 
+    overflow: visible;
+}
+
+.part-text h2 { font-size: 3.5rem; font-weight: 900; color: var(--text-dark); margin-bottom: 25px; line-height: 1.1; }
+.part-text p { font-size: 1.3rem; line-height: 1.8; color: #23395d; margin-bottom: 30px; }
+
+/* Кнопка возврата */
+.back-to-map-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background-color: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    border-radius: 50px; /* Округлая форма как у кнопок в меню */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.back-to-map-btn:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(93, 173, 226, 0.2);
+}
+/* Контейнер для 3D модели */
+.model-3d-container {
+    width: 100%;
+    height: 600px; /* Высота окна просмотра */
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-radius: 60px;
+    margin: 50px 0;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    --poster-color: transparent;
+}

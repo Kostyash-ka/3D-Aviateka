@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Су-27 | 3D-Авиатека</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="model-page-body">
+    
+    <header>
+        <div class="logo">3D-Авиатека</div>
+        <nav>
+            <a href="index.html">← В меню</a>
+            <a href="yak38.html" style="color:var(--accent)">Як-38</a>
+            <a href="mig23.html">МиГ-23</a>
+            <a href="su27.html">Су-27</a>
+        </nav>
+    </header>
+
+    <img src="images/yak38.png" class="aircraft-fixed-bg" alt="Як-38">
+
+    <div class="content-overlay">
+        
+        <section class="info-section">
+            <div class="glass-card">
+                <span class="spec-label">Палубный штурмовик СВВП</span>
+                <h2>Як-38: Стальной прыжок</h2>
+                <p>Як-38 стал первым в СССР серийным самолетом вертикального взлета и посадки. Его называли «оружием внезапного удара», так как он мог взлетать с площадок размером 20 на 20 метров.</p>
+            </div>
+        </section>
+
+        <section class="info-section right">
+            <div class="glass-card">
+                <h2>Система трех двигателей</h2>
+                <p>Для взлета без разбега инженеры установили сразу три двигателя: один основной и два подъемных. Это сложнейшая система, которая позволяла машине буквально «зависать» в воздухе над палубой корабля.</p>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <span class="spec-value">1100 км/ч</span>
+                        <span class="spec-label">Макс. скорость</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-value">3</span>
+                        <span class="spec-label">Двигателя</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="info-section">
+            <div class="glass-card">
+                <h2>Морской базирование</h2>
+                <p>Самолет был создан специально для авианесущих крейсеров проекта «Киев». Несмотря на сложность управления, Як-38 открыл новую эру для советского флота, обеспечив защиту кораблей с воздуха в любой точке океана.</p>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <span class="spec-value">11 000 м</span>
+                        <span class="spec-label">Потолок</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-value">2000 кг</span>
+                        <span class="spec-label">Нагрузка</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="info-section">
+    <div class="model-3d-container">
+        <model-viewer 
+            src="models/yak_38.glb" 
+            ar 
+            camera-controls 
+            auto-rotate 
+            shadow-intensity="1" 
+            exposure="1"
+            interaction-prompt="auto">
+            
+            <div class="glass-card" style="position: absolute; bottom: 20px; left: 20px; padding: 20px; max-width: 250px;">
+                <p style="font-size: 0.9rem; margin: 0;">Используйте мышь для вращения модели</p>
+            </div>
+        </model-viewer>
+    </div>
+</section>
+
+        <section id="interactive-map" class="map-section">
+            <h2 style="font-size: 3rem; margin-bottom: 30px; color: #2c3e50;">Интерактивный разбор конструкции</h2>
+            
+            <div class="map-wrapper">
+    <img src="images/yak38.png" class="interactive-img" alt="Як-38">
+    
+    <a href="#ols" class="hotspot" style="top: 51%; left: 42%;">
+        <div class="hotspot-dot"></div>
+	<span class="hotspot-label">Комбинированная силовая установка</span>
+    </a>
+
+    <a href="#fuselage" class="hotspot" style="top: 51%; left: 31%;">
+        <div class="hotspot-dot"></div>
+	<span class="hotspot-label">Поворотные сопла основного двигателя</span>
+    </a>
+
+    <a href="#engine" class="hotspot" style="top: 38%; left: 61%;">
+        <div class="hotspot-dot"></div>
+	<span class="hotspot-label">Система автоматического катапультирования (СК-3Э)</span>
+    </a>
+</div>
+        </section>
+
+        <div id="ols" class="part-feature-container">
+            <div class="part-content-wrapper">
+                <div class="part-image">
+                    <img src="images/yak38-ust.JPG" alt="ОЛС">
+                </div>
+                <div class="part-text">
+    		    <h2>Комбинированная силовая установка</h2>
+    		    <p>Уникальность Як-38 заключается в наличии сразу трех двигателей: одного основного и двух специальных подъемных, спрятанных за кабиной пилота. Подъемные двигатели РД-36 располагаются вертикально и включаются только на режимах взлета и посадки, создавая мощный столб огня, который буквально выталкивает самолет вверх. Сверху и снизу фюзеляжа находятся массивные створки, которые открываются в полете, превращая истребитель в подобие реактивного вертолета. Эта сложнейшая схема позволила реализовать концепцию безаэродромного базирования на ограниченных площадках авианесущих крейсеров. Синхронизация работы трех разных двигателей стала настоящим технологическим триумфом советских конструкторов того времени.</p>
+    <a href="#interactive-map" class="back-to-map-btn">↑ К схеме самолета</a>
+</div>
+            </div>
+        </div>
+
+        <div id="fuselage" class="part-feature-container">
+            <div class="part-content-wrapper">
+                <div class="part-image">
+                    <img src="images/yak38-vert.JPG" alt="Фюзеляж">
+                </div>
+                <div class="part-text">
+    <h2>Поворотные сопла основного двигателя</h2>
+    <p>Основной двигатель Р27В-300 оснащен двумя огромными поворотными соплами, расположенными по бокам хвостовой части. С помощью мощных гидроприводов пилот может отклонять вектор тяги на 90 градусов, направляя струю раскаленных газов вертикально вниз для взлета или горизонтально назад для разгона. Именно синхронный поворот этих «барабанов» позволяет самолету плавно переходить из режима висения в скоростной горизонтальный полет. Сопла выполнены из жаропрочных сплавов, способных выдерживать колоссальные температурные нагрузки при работе на форсаже прямо у поверхности палубы. Эта система вектора тяги стала прообразом технологий, которые сегодня используются в современных истребителях пятого поколения.</p>
+    <a href="#interactive-map" class="back-to-map-btn">↑ К схеме самолета</a>
+</div>
+            </div>
+        </div>
+
+        <div id="engine" class="part-feature-container">
+            <div class="part-content-wrapper">
+                <div class="part-image">
+                    <img src="images/yak-38-ktp.jpg" alt="Двигатель">
+                </div>
+                <div class="part-text">
+    <h2>Система автоматического катапультирования (СК-3Э)</h2>
+    <p>Як-38 стал первым в мире самолетом, оснащенным интеллектуальной системой принудительного спасения пилота, работающей без участия человека. Поскольку вертикальный взлет крайне опасен (отказ любого из трех двигателей ведет к мгновенному перевороту), компьютер непрерывно следит за углами крена и скоростью вращения машины. Если датчики фиксируют критический наклон на малых высотах, система сама подрывает фонарь и выбрасывает кресло пилота из кабины за доли секунды. Эта автоматика спасла десятки жизней советских летчиков-испытателей в ситуациях, когда человек просто не успел бы среагировать. Наличие такой системы подчеркивает экстремальный характер эксплуатации этого уникального палубного штурмовика.</p>
+    <a href="#interactive-map" class="back-to-map-btn">↑ К схеме самолета</a>
+</div>
+            </div>
+        </div>
+
+    </div> <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

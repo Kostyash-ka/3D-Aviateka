@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Су-27 | 3D-Авиатека</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="model-page-body">
+    
+    <header>
+        <div class="logo">3D-Авиатека</div>
+        <nav>
+            <a href="index.html">← В меню</a>
+            <a href="yak38.html">Як-38</a>
+            <a href="mig23.html" style="color:var(--accent)">МиГ-23</a>
+            <a href="su27.html">Су-27</a>
+        </nav>
+    </header>
+
+    <img src="images/mig23.png" class="aircraft-fixed-bg" alt="МиГ-23">
+
+    <div class="content-overlay">
+        
+        <section class="info-section">
+            <div class="glass-card">
+                <span class="spec-label">Многоцелевой истребитель</span>
+                <h2>МиГ-23 «Бич»</h2>
+                <p>Первый в СССР серийный самолет с изменяемой стреловидностью крыла. Этот технический прорыв позволил совместить отличные взлетные характеристики и сверхзвуковую скорость.</p>
+            </div>
+        </section>
+
+        <section class="info-section right">
+            <div class="glass-card">
+                <h2>Крыло-трансформер</h2>
+                <p>Механизация крыла позволяет изменять его угол прямо в полете (16°, 45° или 72°). Это делает МиГ-23 универсальным бойцом: от маневренного боя до скоростного перехвата.</p>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <span class="spec-value">2500 км/ч</span>
+                        <span class="spec-label">Макс. скорость</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-value">72°</span>
+                        <span class="spec-label">Макс. стреловидность</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="glass-card">
+                <h2>Наследие</h2>
+                <p>МиГ-23 стал основой для множества модификаций, включая ударный вариант МиГ-27. Он принимал участие в десятках конфликтов по всему миру, зарекомендовав себя как грозная машина.</p>
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <span class="spec-value">17 500 м</span>
+                        <span class="spec-label">Практический потолок</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-value">2000 км</span>
+                        <span class="spec-label">Дальность полета</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="info-section">
+    <div class="model-3d-container">
+        <model-viewer 
+            src="models/mig-23.glb" 
+            ar 
+            camera-controls 
+            auto-rotate 
+            shadow-intensity="1" 
+            exposure="1"
+            interaction-prompt="auto">
+            
+            <div class="glass-card" style="position: absolute; bottom: 20px; left: 20px; padding: 20px; max-width: 250px;">
+                <p style="font-size: 0.9rem; margin: 0;">Используйте мышь для вращения модели</p>
+            </div>
+        </model-viewer>
+    </div>
+</section>
+
+        <section id="interactive-map" class="map-section">
+            <h2 style="font-size: 3rem; margin-bottom: 30px; color: #2c3e50;">Интерактивный разбор конструкции</h2>
+            
+            <div class="map-wrapper">
+    <img src="images/mig23.png" class="interactive-img" alt="Су-27">
+    
+    <a href="#ols" class="hotspot" style="top: 39%; left: 57%;">
+        <div class="hotspot-dot"></div>
+	<span class="hotspot-label">Крыло изменяемой стреловидности</span>
+    </a>
+
+    <a href="#fuselage" class="hotspot" style="top: 45%; left: 26%;">
+        <div class="hotspot-dot"></div>
+	<span class="hotspot-label">Складной гребень</span>
+    </a>
+
+    <a href="#engine" class="hotspot" style="top: 37%; left: 33%;">
+        <div class="hotspot-dot"></div>
+	<span class="hotspot-label">Р-35-300</span>
+    </a>
+</div>
+        </section>
+
+        <div id="ols" class="part-feature-container">
+            <div class="part-content-wrapper">
+                <div class="part-image">
+                    <img src="images/mig23-strela.jpg" alt="ОЛС">
+                </div>
+                <div class="part-text">
+    		    <h2>Крыло изменяемой стреловидности</h2>
+    		    <p>Это главная визуальная и техническая черта МиГ-23, позволяющая ему быть «тремя самолетами в одном». На малых углах в 16° машина превращается в планер с огромной подъемной силой для короткого взлета и посадки на грунтовые аэродромы. Промежуточное положение в 45° идеально подходит для маневренного боя и патрулирования на крейсерских скоростях. При максимальном угле в 72° самолет превращается в стремительную «стрелу» для броска на скоростях свыше 2500 км/ч. Реализация этого механизма потребовала создания мощнейшего шарнирного узла, выдерживающего колоссальные нагрузки. Именно эта технология сделала МиГ-23 первым по-настоящему многорежимным фронтовым истребителем СССР.</p>
+                <a href="#interactive-map" class="back-to-map-btn">↑ К схеме самолета</a>
+            </div>
+            </div>
+        </div>
+
+        <div id="fuselage" class="part-feature-container">
+            <div class="part-content-wrapper">
+                <div class="part-image">
+                    <img src="images/mig23-greb.jpg" alt="Фюзеляж">
+                </div>
+                <div class="part-text">
+    <h2>Складной подфюзеляжный гребень</h2>
+    <p>Из-за высокой скорости полета МиГ-23 нуждался в огромном вертикальном киле для курсовой устойчивости, но такой киль просто не помещался бы по высоте в стандартные ангары. Инженеры нашли гениальное и дерзкое решение: они добавили нижний гребень, который складывается вбок при выпуске шасси. Как только самолет отрывается от земли и убирает колеса, мощная гидравлика раскрывает гребень в вертикальное положение. Это увеличивает площадь вертикального оперения почти в полтора раза, позволяя пилоту уверенно управлять машиной на сверхзвуковых скоростях. Без этого «складного плавника» истребитель стал бы неуправляемым при попытке развить максимальную скорость. Это уникальное техническое решение стало визитной карточкой семейства «двадцать третьих».</p>
+    <a href="#interactive-map" class="back-to-map-btn">↑ К схеме самолета</a>
+</div>
+            </div>
+        </div>
+
+        <div id="engine" class="part-feature-container">
+            <div class="part-content-wrapper">
+                <div class="part-image">
+                    <img src="images/mig23-dvig.jpg" alt="Двигатель">
+                </div>
+                <div class="part-text">
+    <h2>Турбореактивный двигатель Р-35-300</h2>
+    <p>Сердце самолета — один из самых мощных для своего времени двигателей, превращающий МиГ-23 в настоящую ракету. Огромное сопло с регулируемыми створками занимает почти треть всей длины фюзеляжа, подчеркивая мощь силовой установки. Р-35 обеспечивал истребителю сумасшедшую скороподъемность, позволяя перехватывать цели на больших высотах за считанные минуты. Особенностью двигателя была его приспособленность к работе в экстремальных условиях и при резких маневрах с большими перегрузками. Форсажная камера давала такой импульс, что пилот буквально вжимался в кресло, ощущая мощь тринадцати тонн тяги. Именно благодаря этому двигателю МиГ-23 долгое время оставался одним из самых быстрых истребителей в мире.</p>
+    <a href="#interactive-map" class="back-to-map-btn">↑ К схеме самолета</a>
+</div>
+            </div>
+        </div>
+
+    </div> <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
