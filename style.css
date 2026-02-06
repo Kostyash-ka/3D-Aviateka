@@ -169,12 +169,12 @@ nav a { color: var(--text-main); text-decoration: none; margin-left: 30px; font-
 }
 
 .map-wrapper {
-    position: relative;        /* Обязательно для позиционирования точек внутри */
+    position: relative;
     display: inline-block;
     margin: 40px auto 0;
     background: #ffffff;
-    padding: 40px;            /* Отступ от картинки до края рамки */
-    border-radius: 60px;      /* Скругление как у инфо-блоков */
+    padding: 40px;
+    border-radius: 60px;
     box-shadow: 0 40px 100px rgba(0,0,0,0.1); 
     border: 1px solid rgba(0,0,0,0.05);
 }
@@ -188,11 +188,10 @@ nav a { color: var(--text-main); text-decoration: none; margin-left: 30px; font-
 
 /* --- ТОЧКИ И ВСПЛЫВАЮЩИЕ ПОДСКАЗКИ --- */
 .hotspot {
-    position: absolute;        /* Координаты на карте */
+    position: absolute;
     z-index: 130;
     cursor: pointer;
     text-decoration: none;
-    /* Создаем область для наведения */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -216,26 +215,25 @@ nav a { color: var(--text-main); text-decoration: none; margin-left: 30px; font-
 /* Сами текстовые подсказки */
 .hotspot-label {
     position: absolute;
-    bottom: 40px;              /* Всплывает над точкой */
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     
-    background: #2c3e50;       /* Темный фон */
-    color: #ffffff !important; /* Белый текст */
+    background: #2c3e50;
+    color: #ffffff !important;
     padding: 10px 18px;
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 600;
-    white-space: nowrap;       /* В одну строку */
+    white-space: nowrap; 
     
-    opacity: 0;                /* Скрыто */
+    opacity: 0; 
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 999;
-    pointer-events: none;      /* Чтобы не мешала кликать по точке */
+    pointer-events: none;
 }
 
-/* Треугольник под текстом */
 .hotspot-label::after {
     content: '';
     position: absolute;
@@ -373,3 +371,4 @@ model-viewer {
     --poster-color: transparent;
 
 }
+
