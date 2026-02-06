@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const panelTitle = document.getElementById('panel-title');
     const panelText = document.getElementById('panel-text');
 
-    // Данные для точек (можно расширять)
+    // Данные для точек 
     const data = {
         'engine': {
             title: 'Двигатель',
@@ -36,18 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Если хотим закрывать панель, когда убираем мышь, раскомментируй строки ниже:
-        /*
-        point.addEventListener('mouseleave', () => {
-             panel.classList.remove('active');
-        });
-        */
+
     });
-    
-    // Закрытие панели при клике в пустое место (опционально)
     document.addEventListener('click', (e) => {
         if (!e.target.classList.contains('point') && !e.target.closest('.info-panel')) {
             panel.classList.remove('active');
         }
     });
+
 });
