@@ -326,7 +326,6 @@ nav a { color: var(--text-main); text-decoration: none; margin-left: 30px; font-
 
 .part-text { 
     flex: 1; 
-    /* Защита от "многоточий" и сокращений */
     min-width: 350px; 
     overflow: visible;
 }
@@ -342,7 +341,7 @@ nav a { color: var(--text-main); text-decoration: none; margin-left: 30px; font-
     background-color: transparent;
     border: 2px solid var(--accent);
     color: var(--accent);
-    border-radius: 50px; /* Округлая форма как у кнопок в меню */
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     font-size: 1rem;
@@ -358,7 +357,7 @@ nav a { color: var(--text-main); text-decoration: none; margin-left: 30px; font-
 /* Контейнер для 3D модели */
 .model-3d-container {
     width: 100%;
-    height: 600px; /* Высота окна просмотра */
+    height: 600px;
     background: var(--glass-bg);
     backdrop-filter: blur(15px);
     border-radius: 60px;
@@ -372,4 +371,5 @@ model-viewer {
     width: 100%;
     height: 100%;
     --poster-color: transparent;
+
 }
